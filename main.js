@@ -279,8 +279,8 @@ const app = {
         randomSongBtn.classList.toggle("active", this.isRandom);
     },
     start() {
-        this.loadConfig();
         this.defineProperties();
+        this.loadConfig();
         this.handleEvents();
         this.render();
         this.loadCurrentSong();
