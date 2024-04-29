@@ -217,7 +217,9 @@ const app = {
         return this.songs[this.currentIndex];
     },
     loadCurrentSong() {
-        const currentSong = this.getCurrentSong();
+        // const currentSong = this.getCurrentSong();
+        const currentSong = this.currentSong;
+
         console.log(currentSong);
         heading.textContent = currentSong.name;
         cdThumb.style.backgroundImage = `url(${currentSong.image})`;
@@ -285,7 +287,7 @@ const app = {
         randomSongBtn.classList.toggle("active", this.isRandom);
     },
     start() {
-        // this.defineProperties();
+        this.defineProperties();
         this.loadConfig();
         this.handleEvents();
         this.render();
