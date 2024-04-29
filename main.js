@@ -37,7 +37,7 @@ const app = {
             image: "https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg"
         },
         {
-            id: 1,
+            id: 2,
             name: "Naachne Ka Shaunq",
             singer: "Raftaar x Brobha V",
             path: "./audios/Naachne-Ka-Shaunq.m4a",
@@ -213,11 +213,15 @@ const app = {
             }
         });
     },
+    getCurrentSong() {
+        return this.songs[this.currentIndex];
+    },
     loadCurrentSong() {
-        console.log(this.currentSong);
-        heading.textContent = this.currentSong.name;
-        cdThumb.style.backgroundImage = `url(${this.currentSong.image})`;
-        audio.src = this.currentSong.path;
+        const currentSong = this.getCurrentSong();
+        console.log(currentSong);
+        heading.textContent = currentSong.name;
+        cdThumb.style.backgroundImage = `url(${currentSong.image})`;
+        audio.src = currentSong.path;
         audio.currentTime = this.currentTime;
         audio.volume = this.currentVolume;
         this.songPlayed.add(this.songs[this.currentIndex].id);
@@ -225,7 +229,7 @@ const app = {
         this.setConfig('currentIndex', this.currentIndex);
 
         $(".song.active")?.classList.remove("active");
-        $(`.song[data-id='${this.currentSong.id}']`)?.classList.add("active");
+        $(`.song[data-id='${currentSong.id}']`)?.classList.add("active");
         cdThumbAnimate.cancel();
 
         this.scrollToActiveSong();
@@ -281,7 +285,7 @@ const app = {
         randomSongBtn.classList.toggle("active", this.isRandom);
     },
     start() {
-        this.defineProperties();
+        // this.defineProperties();
         this.loadConfig();
         this.handleEvents();
         this.render();
