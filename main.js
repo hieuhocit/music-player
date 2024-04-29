@@ -19,7 +19,7 @@ const volumeInput = $("#volume");
 
 
 const keyframes = [
-    { transform: "rotate(360deg" }
+    { transform: "rotate(360deg)" }
 ];
 const cdThumbAnimate = cdThumb.animate(keyframes, {
     duration: 10000,
@@ -30,17 +30,17 @@ const app = {
     songs: [
         {
             id: 1,
-            name: "Naachne Ka Shaunq",
-            singer: "Raftaar x Brobha V",
-            path: "./audios/Naachne-Ka-Shaunq.m4a",
-            image: "https://i.ytimg.com/vi/QvswgfLDuPg/maxresdefault.jpg"
-        },
-        {
-            id: 2,
             name: "Click Pow Get Down",
             singer: "Raftaar x Fortnite",
             path: "./audios/Click-Pow-Get-Down.mp4",
             image: "https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg"
+        },
+        {
+            id: 1,
+            name: "Naachne Ka Shaunq",
+            singer: "Raftaar x Brobha V",
+            path: "./audios/Naachne-Ka-Shaunq.m4a",
+            image: "https://i.ytimg.com/vi/QvswgfLDuPg/maxresdefault.jpg"
         },
         {
             id: 3,
