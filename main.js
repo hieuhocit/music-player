@@ -1,3 +1,4 @@
+"use strict";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -213,6 +214,7 @@ const app = {
         });
     },
     loadCurrentSong() {
+        console.log(this.currentSong);
         heading.textContent = this.currentSong.name;
         cdThumb.style.backgroundImage = `url(${this.currentSong.image})`;
         audio.src = this.currentSong.path;
