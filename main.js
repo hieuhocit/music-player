@@ -27,14 +27,6 @@ const cdThumbAnimate = cdThumb.animate(keyframes, {
 });
 
 const app = {
-    currentIndex: 0,
-    currentTime: 0,
-    currentVolume: 1,
-    isPlaying: false,
-    isRandom: false,
-    isRepeat: false,
-    songPlayed: new Set(),
-    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
     songs: [
         {
             id: 1,
@@ -87,6 +79,14 @@ const app = {
             image: "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/oEWlj5gYKz/size_xxl_1586752323.webp"
         }
     ],
+    currentIndex: 0,
+    currentTime: 0,
+    currentVolume: 1,
+    isPlaying: false,
+    isRandom: false,
+    isRepeat: false,
+    songPlayed: new Set(),
+    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
     setConfig(key, value) {
         this.config[key] = value;
         localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
